@@ -26,4 +26,9 @@ curl -X PUT http://localhost:3000/api/todos/1 \
 DELTEE
 curl -X DELETE http://localhost:3000/api/todos/1
 
+------------------------------------------------------------------
 
+ARCHIVE
+curl -X POST http://localhost:3000/api/todos \
+     -H "Content-Type: application/json" \
+     -d '{"title": "Qur'on o‘qish", "done": 1}'
