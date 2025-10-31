@@ -48,4 +48,34 @@ router.delete("/:id", (req, res) => {
   res.json({ message: "Todo deleted" });
 });
 
+router.post("/archive", (req, res) => {
+  try {
+    const todosToArchive = db
+      .prepare("SELECT * FROM todos WHERE done = 1")
+      .all();
+    if (todosToArchive.length === 0) {
+      return res.json({ message: "Архивтеуге жазбалар жоқ" });
+    }
+
+    const insertStmt = db.prepare(
+      "INSERT INTO archive_todos (title, done) VALUES (?, ?)"
+    );
+    const insertMany = db.transaction((todos) => {
+      for (const todo of todos) {
+        insertStmt.run(todo.title, todo.done);
+      }
+    });
+    insertMany(todosToArchive);
+
+    db.prepare("DELETE FROM todos WHERE done = 1").run();
+
+    res.json({
+      message: "Аяқталған жазбалар архивке көшірілді",
+      count: todosToArchive.length,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 export default router;
