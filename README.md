@@ -26,15 +26,15 @@ API реализует простые операции с таблицей todos
 ```
 node-lab/
 ├── src/
-│   ├── index.js           # Точка входа (сервер)
+│   ├── index.js
 │   ├── routes/
-│   │   └── todos.js       # Маршруты CRUD
+│   │   └── todos.js
 │   ├── lib/
-│   │   └── db.js          # Подключение базы данных
+│   │   └── db.js
 │   └── data/
-│       └── todos.db       # Файл SQLite (создается автоматически)
-├── .env                   # Настройки окружения
-├── .gitignore             # Исключения для Git
+│       └── todos.db
+├── .env
+├── .gitignore
 ├── package.json
 └── README.md
 ```
@@ -46,7 +46,7 @@ node-lab/
 1. Клонируйте репозиторий:
 
    ```bash
-   git clone https://github.com/<ВАШ_ПОЛЬЗОВАТЕЛЬ>/node-lab.git
+   git clone https://github.com/jahongirdev1/node-lab.git
    cd node-lab
    ```
 
