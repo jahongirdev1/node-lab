@@ -119,4 +119,4 @@ Server running on http://localhost:3000
 
 **jahongirdev1**
 Астана, Казахстан
-GitHub: [github.com/jahongirdev1](https://github.com/jshongirdev1)
+GitHub: [github.com/jahongirdev1](https://github.com/jahongirdev1)
