@@ -16,7 +16,7 @@
     "crud",
     "api"
   ],
-  "author": "BRAT",
+  "author": "Jahongir",
   "license": "ISC",
   "dependencies": {
     "better-sqlite3": "^12.4.1",

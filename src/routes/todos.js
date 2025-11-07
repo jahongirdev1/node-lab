@@ -60,6 +60,7 @@ router.post("/archive", (req, res) => {
     const insertStmt = db.prepare(
       "INSERT INTO archive_todos (title, done) VALUES (?, ?)"
     );
+
     const insertMany = db.transaction((todos) => {
       for (const todo of todos) {
         insertStmt.run(todo.title, todo.done);
